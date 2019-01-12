@@ -1,0 +1,17 @@
+body {
+    background: url(https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+.clock {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #FFFFFF;
+    font-size: 80px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}

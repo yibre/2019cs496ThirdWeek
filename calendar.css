@@ -1,0 +1,87 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font: 18px Helvetica;
+    }
+
+body {
+    background: url(https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+.block {
+    background-color:rgb(0,0,0);
+    background-size: 100% 100%;
+}
+
+.calendar {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 10%;
+    width: 70%;
+    /*margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden; */
+    }
+/*
+ul {
+    margin: 0;
+    padding: 0;
+    }
+*/
+      
+li {
+    float: left;
+    display: block;
+    width: 14.2857%; /* 100나누기7한 값 */
+    /*height: 16.66%;*/
+    text-align: center;
+    list-style-type: none;
+    font-weight: 800;
+    margin: 0px 0px 50px 0px;
+    }
+
+.day {
+    color: #7cb6e6;
+    }
+
+.date {
+    color: #000000;
+    border-radius: 5px; /*border의 모서리를 둥그스름하게 만드는 것*/
+    background-color: #ffb2b2;
+    border:  solid #ffb2b2;
+}
+
+/*
+li {
+  float: left;
+  display: block;
+  width: 14.2857%;
+  text-align: center;
+  list-style-type: none;
+}
+
+li:nth-child(n+1):nth-child(-n+7) {
+  font-weight: 900;
+  color: #e67e22;
+}
+
+li:nth-child(n+39), li:nth-child(n+8):nth-child(-n+16) {
+  font-weight: 900;
+  color: rgba(0,0,0,.3);
+}
+
+li:hover:nth-child(n+8):nth-child(-n+38), li:nth-child(17){
+  border-radius: 5px;
+  background-color: #1abc9c;
+  color: #ecf0f1; 이게 그 색깔있던거
+}
+*/
