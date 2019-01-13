@@ -1,0 +1,288 @@
+db
+show dbs
+use contact_address
+db
+show dbs
+db.test_collection.insert({"test_name":"woongje", "test_numebr":1234})
+show dbs
+use contact_address
+db.dropDatabase();
+show dbs
+use contact_address
+show dbs
+db
+db.dropDatabase();
+db
+dbs
+show dbs
+use mydb
+db.contact_address.insert([ { "name" : "Pak Jeong-Hun" , "number" : "010-3659-1044"  }, { "name" : "Won Jung-Eun" , "number" : "033-8015-2264"  }, { "name" : "Hong Byung-Hoon" , "number" : "052-1624-1104"  }, { "name" : "Sop Kyong-Su" , "number" : "010-4728-5356"  }, { "name" : "Chom Kang-Dae" , "number" : "062-4032-6077"  }, { "name" : "Chong Minjun" , "number" : "051-7086-4133"  }, { "name" : "Ch'u Song-Ho" , "number" : "1588-7473"  }, { "name" : "Chu Chi-Won" , "number" : "02-2585-1613"  }, { "name" : "Eoh Ji-Hoon" , "number" : "02-1265-5822"  }, { "name" : "An Ji-Won" , "number" : "040-9425-5912"  }, { "name" : "Tan Hyun-Ju" , "number" : "1588-3958"  }, { "name" : "Hung Min-Yung" , "number" : "047-3833-5090"  }, { "name" : "Ri Mi-Sook" , "number" : "068-5790-5717"  }, { "name" : "Chegal Suk-Ja" , "number" : "1588-9206"  }, { "name" : "Pong Yi" , "number" : "1588-9545"  }, { "name" : "Chung Yu-Ni" , "number" : "1588-7875"  }, { "name" : "Hwan Kyong-Ja" , "number" : "02-4179-7747"  }, { "name" : "Ogum Un-Ju" , "number" : "010-4485-3333"  }, { "name" : "Mangjol Hyon-Ju" , "number" : "053-8542-5040"  }, { "name" : "Mae Tae-Young" , "number" : "010-9034-0169"  }, { "name" : "Pom Ji-Hun" , "number" : "1588-1277"  }, { "name" : "Ki Chuwon" , "number" : "02-8037-5149"  }, { "name" : "Kun Min-Jun" , "number" : "031-9784-3958"  }, { "name" : "Ch'ang Kang-Dae" , "number" : "068-8434-2971"  }, { "name" : "Kim Min-Su" , "number" : "059-8651-7823"  }, { "name" : "Pang Min-Kyu" , "number" : "054-8456-3648"  }, { "name" : "Chu Kyong-Su" , "number" : "064-3639-9267"  }, { "name" : "Nang Suk-Chul" , "number" : "067-0436-4190"  }, { "name" : "Ru Dong-Jun" , "number" : "010-9296-0249"  }, { "name" : "Sung Sang-Min" , "number" : "042-3650-9642"  }, { "name" : "Yun Myung-Hee" , "number" : "052-4368-7394"  }, { "name" : "Min Se-Yeon" , "number" : "02-4893-7244"  }, { "name" : "Pom Mi-Suk" , "number" : "033-7327-2767"  }, { "name" : "Yang Ja-Hyun" , "number" : "054-9152-2803"  }, { "name" : "P'ung Da-Hee" , "number" : "010-3425-5002"  }, { "name" : "Kye Eun-Ah" , "number" : "070-5128-4608"  }, { "name" : "Kun Sujin" , "number" : "02-4429-7810"  }, { "name" : "Pae Ae" , "number" : "070-8311-5537"  }, { "name" : "Ra Hwi-Hyang" , "number" : "1588-0132"  }, { "name" : "Sip Eun-Bi" , "number" : "1588-9463"  }, { "name" : "Ogum Yong-Gi" , "number" : "046-0213-2011"  }, { "name" : "Chang Seong-Hyeon" , "number" : "032-9671-4492"  }, { "name" : "Om Young-Soo" , "number" : "036-3070-9286"  }, { "name" : "Hwang Seung-Woo" , "number" : "036-4224-7732"  }, { "name" : "Tae Song-Ho" , "number" : "066-0719-8085"  }, { "name" : "P'yong Sang-Chul" , "number" : "02-0421-3789"  }, { "name" : "Ko Myung-Hee" , "number" : "053-3212-4003"  }, { "name" : "Chegal Jung-Nam" , "number" : "1588-9258"  }, { "name" : "Nae Kwang-Jo" , "number" : "061-9388-5237"  }, { "name" : "Kwok Sunghyon" , "number" : "031-3499-3751"  } ] )
+db.contact_address.find()
+it
+show dbs
+db.mydb.find()
+db
+use mydb
+db.mydb.find()
+dvb
+db
+show dbs
+use mydb
+show collections
+db.mydb.find()
+db.contact_address.find()
+it
+show dbs
+use mydb
+show dbs
+use mydb
+show collection
+db.contact_address.find()
+show dbs
+db
+mongo mydb
+mongo mydb;
+use mydb
+show dbs
+db
+use mydb
+db
+use mydb
+db.contact_address.find()
+use mydb
+use mydb
+db.contact_address.find()
+show dbs
+use mydb
+show collections
+db.contact_address.find()
+db.contact_address.drop()
+db.contact_address.find()
+;
+db.contact_address.find()
+;
+db.contact_address.find()
+db.contact_address.insert({"user" : "test", "contact" : [ { "name" : "Pak Jeong-Hun" , "number" : "010-3659-1044"  }, { "name" : "Won Jung-Eun" , "number" : "033-8015-2264"  }, { "name" : "Hong Byung-Hoon" , "number" : "052-1624-1104"  }, { "name" : "Sop Kyong-Su" , "number" : "010-4728-5356"  }, { "name" : "Chom Kang-Dae" , "number" : "062-4032-6077"  }, { "name" : "Chong Minjun" , "number" : "051-7086-4133"  }, { "name" : "Ch'u Song-Ho" , "number" : "1588-7473"  }, { "name" : "Chu Chi-Won" , "number" : "02-2585-1613"  }, { "name" : "Eoh Ji-Hoon" , "number" : "02-1265-5822"  }, { "name" : "An Ji-Won" , "number" : "040-9425-5912"  }, { "name" : "Tan Hyun-Ju" , "number" : "1588-3958"  }, { "name" : "Hung Min-Yung" , "number" : "047-3833-5090"  }, { "name" : "Ri Mi-Sook" , "number" : "068-5790-5717"  }, { "name" : "Chegal Suk-Ja" , "number" : "1588-9206"  }, { "name" : "Pong Yi" , "number" : "1588-9545"  }, { "name" : "Chung Yu-Ni" , "number" : "1588-7875"  }, { "name" : "Hwan Kyong-Ja" , "number" : "02-4179-7747"  }, { "name" : "Ogum Un-Ju" , "number" : "010-4485-3333"  }, { "name" : "Mangjol Hyon-Ju" , "number" : "053-8542-5040"  }, { "name" : "Mae Tae-Young" , "number" : "010-9034-0169"  }, { "name" : "Pom Ji-Hun" , "number" : "1588-1277"  }, { "name" : "Ki Chuwon" , "number" : "02-8037-5149"  }, { "name" : "Kun Min-Jun" , "number" : "031-9784-3958"  }, { "name" : "Ch'ang Kang-Dae" , "number" : "068-8434-2971"  }, { "name" : "Kim Min-Su" , "number" : "059-8651-7823"  }, { "name" : "Pang Min-Kyu" , "number" : "054-8456-3648"  }, { "name" : "Chu Kyong-Su" , "number" : "064-3639-9267"  }, { "name" : "Nang Suk-Chul" , "number" : "067-0436-4190"  }, { "name" : "Ru Dong-Jun" , "number" : "010-9296-0249"  }, { "name" : "Sung Sang-Min" , "number" : "042-3650-9642"  }, { "name" : "Yun Myung-Hee" , "number" : "052-4368-7394"  }, { "name" : "Min Se-Yeon" , "number" : "02-4893-7244"  }, { "name" : "Pom Mi-Suk" , "number" : "033-7327-2767"  }, { "name" : "Yang Ja-Hyun" , "number" : "054-9152-2803"  }, { "name" : "P'ung Da-Hee" , "number" : "010-3425-5002"  }, { "name" : "Kye Eun-Ah" , "number" : "070-5128-4608"  }, { "name" : "Kun Sujin" , "number" : "02-4429-7810"  }, { "name" : "Pae Ae" , "number" : "070-8311-5537"  }, { "name" : "Ra Hwi-Hyang" , "number" : "1588-0132"  }, { "name" : "Sip Eun-Bi" , "number" : "1588-9463"  }, { "name" : "Ogum Yong-Gi" , "number" : "046-0213-2011"  }, { "name" : "Chang Seong-Hyeon" , "number" : "032-9671-4492"  }, { "name" : "Om Young-Soo" , "number" : "036-3070-9286"  }, { "name" : "Hwang Seung-Woo" , "number" : "036-4224-7732"  }, { "name" : "Tae Song-Ho" , "number" : "066-0719-8085"  }, { "name" : "P'yong Sang-Chul" , "number" : "02-0421-3789"  }, { "name" : "Ko Myung-Hee" , "number" : "053-3212-4003"  }, { "name" : "Chegal Jung-Nam" , "number" : "1588-9258"  }, { "name" : "Nae Kwang-Jo" , "number" : "061-9388-5237"  }, { "name" : "Kwok Sunghyon" , "number" : "031-3499-3751"  } ] })
+db.contact_address.find()
+show dbs
+use mydb
+show collections
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+db.contact_address.deleteOne({"_id" : "ObjectId("5c321a93a853e5d931ec1667")})
+db.contact_address.deleteOne({_id : "ObjectId("5c321a93a853e5d931ec1667")"})
+db.contact_address.deleteOne({_id : ObjectId("5c321a93a853e5d931ec1667")})
+db.contact_address.deleteOne({_id : ObjectId("5c321c45a853e5d931ec1692")})
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydfb
+show dbs
+use mydb
+db.contact_address.find()
+db.contact_address.deleteOne({_id : ObjectId("5c32fdd1237c9314553058aa"")})
+db.contact_address.deleteOne({_id : ObjectId("5c32fdd1237c9314553058aa")})
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+db
+db.contact_address.find()
+show collections
+db.contact_address.find()
+use mydb
+show collection
+show collections
+db.contact_address.find()
+db.contact_address.insert({"user" : "test", "contact" : [ { "name" : "Pak Jeong-Hun" , "number" : "010-3659-1044"  }, { "name" : "Won Jung-Eun" , "number" : "033-8015-2264"  }, { "name" : "Hong Byung-Hoon" , "number" : "052-1624-1104"  }, { "name" : "Sop Kyong-Su" , "number" : "010-4728-5356"  }, { "name" : "Chom Kang-Dae" , "number" : "062-4032-6077"  }, { "name" : "Chong Minjun" , "number" : "051-7086-4133"  }, { "name" : "Ch'u Song-Ho" , "number" : "1588-7473"  }, { "name" : "Chu Chi-Won" , "number" : "02-2585-1613"  }, { "name" : "Eoh Ji-Hoon" , "number" : "02-1265-5822"  }, { "name" : "An Ji-Won" , "number" : "040-9425-5912"  }, { "name" : "Tan Hyun-Ju" , "number" : "1588-3958"  }, { "name" : "Hung Min-Yung" , "number" : "047-3833-5090"  }, { "name" : "Ri Mi-Sook" , "number" : "068-5790-5717"  }, { "name" : "Chegal Suk-Ja" , "number" : "1588-9206"  }, { "name" : "Pong Yi" , "number" : "1588-9545"  }, { "name" : "Chung Yu-Ni" , "number" : "1588-7875"  }, { "name" : "Hwan Kyong-Ja" , "number" : "02-4179-7747"  }, { "name" : "Ogum Un-Ju" , "number" : "010-4485-3333"  }, { "name" : "Mangjol Hyon-Ju" , "number" : "053-8542-5040"  }, { "name" : "Mae Tae-Young" , "number" : "010-9034-0169"  }, { "name" : "Pom Ji-Hun" , "number" : "1588-1277"  }, { "name" : "Ki Chuwon" , "number" : "02-8037-5149"  }, { "name" : "Kun Min-Jun" , "number" : "031-9784-3958"  }, { "name" : "Ch'ang Kang-Dae" , "number" : "068-8434-2971"  }, { "name" : "Kim Min-Su" , "number" : "059-8651-7823"  }, { "name" : "Pang Min-Kyu" , "number" : "054-8456-3648"  }, { "name" : "Chu Kyong-Su" , "number" : "064-3639-9267"  }, { "name" : "Nang Suk-Chul" , "number" : "067-0436-4190"  }, { "name" : "Ru Dong-Jun" , "number" : "010-9296-0249"  }, { "name" : "Sung Sang-Min" , "number" : "042-3650-9642"  }, { "name" : "Yun Myung-Hee" , "number" : "052-4368-7394"  }, { "name" : "Min Se-Yeon" , "number" : "02-4893-7244"  }, { "name" : "Pom Mi-Suk" , "number" : "033-7327-2767"  }, { "name" : "Yang Ja-Hyun" , "number" : "054-9152-2803"  }, { "name" : "P'ung Da-Hee" , "number" : "010-3425-5002"  }, { "name" : "Kye Eun-Ah" , "number" : "070-5128-4608"  }, { "name" : "Kun Sujin" , "number" : "02-4429-7810"  }, { "name" : "Pae Ae" , "number" : "070-8311-5537"  }, { "name" : "Ra Hwi-Hyang" , "number" : "1588-0132"  }, { "name" : "Sip Eun-Bi" , "number" : "1588-9463"  }, { "name" : "Ogum Yong-Gi" , "number" : "046-0213-2011"  }, { "name" : "Chang Seong-Hyeon" , "number" : "032-9671-4492"  }, { "name" : "Om Young-Soo" , "number" : "036-3070-9286"  }, { "name" : "Hwang Seung-Woo" , "number" : "036-4224-7732"  }, { "name" : "Tae Song-Ho" , "number" : "066-0719-8085"  }, { "name" : "P'yong Sang-Chul" , "number" : "02-0421-3789"  }, { "name" : "Ko Myung-Hee" , "number" : "053-3212-4003"  }, { "name" : "Chegal Jung-Nam" , "number" : "1588-9258"  }, { "name" : "Nae Kwang-Jo" , "number" : "061-9388-5237"  }, { "name" : "Kwok Sunghyon" , "number" : "031-3499-3751"  } ] })
+db.contact_address.find()
+use mydb
+show collection
+show collections
+db.contact_address.find()
+db.contact_address.insert({"user" : "test", "contact" : [ { "name" : "Pak Jeong-Hun" , "number" : "010-3659-1044"  }, { "name" : "Won Jung-Eun" , "number" : "033-8015-2264"  }, { "name" : "Hong Byung-Hoon" , "number" : "052-1624-1104"  }, { "name" : "Sop Kyong-Su" , "number" : "010-4728-5356"  }, { "name" : "Chom Kang-Dae" , "number" : "062-4032-6077"  }, { "name" : "Chong Minjun" , "number" : "051-7086-4133"  }, { "name" : "Ch'u Song-Ho" , "number" : "1588-7473"  }, { "name" : "Chu Chi-Won" , "number" : "02-2585-1613"  }, { "name" : "Eoh Ji-Hoon" , "number" : "02-1265-5822"  }, { "name" : "An Ji-Won" , "number" : "040-9425-5912"  }, { "name" : "Tan Hyun-Ju" , "number" : "1588-3958"  }, { "name" : "Hung Min-Yung" , "number" : "047-3833-5090"  }, { "name" : "Ri Mi-Sook" , "number" : "068-5790-5717"  }, { "name" : "Chegal Suk-Ja" , "number" : "1588-9206"  }, { "name" : "Pong Yi" , "number" : "1588-9545"  }, { "name" : "Chung Yu-Ni" , "number" : "1588-7875"  }, { "name" : "Hwan Kyong-Ja" , "number" : "02-4179-7747"  }, { "name" : "Ogum Un-Ju" , "number" : "010-4485-3333"  }, { "name" : "Mangjol Hyon-Ju" , "number" : "053-8542-5040"  }, { "name" : "Mae Tae-Young" , "number" : "010-9034-0169"  }, { "name" : "Pom Ji-Hun" , "number" : "1588-1277"  }, { "name" : "Ki Chuwon" , "number" : "02-8037-5149"  }, { "name" : "Kun Min-Jun" , "number" : "031-9784-3958"  }, { "name" : "Ch'ang Kang-Dae" , "number" : "068-8434-2971"  }, { "name" : "Kim Min-Su" , "number" : "059-8651-7823"  }, { "name" : "Pang Min-Kyu" , "number" : "054-8456-3648"  }, { "name" : "Chu Kyong-Su" , "number" : "064-3639-9267"  }, { "name" : "Nang Suk-Chul" , "number" : "067-0436-4190"  }, { "name" : "Ru Dong-Jun" , "number" : "010-9296-0249"  }, { "name" : "Sung Sang-Min" , "number" : "042-3650-9642"  }, { "name" : "Yun Myung-Hee" , "number" : "052-4368-7394"  }, { "name" : "Min Se-Yeon" , "number" : "02-4893-7244"  }, { "name" : "Pom Mi-Suk" , "number" : "033-7327-2767"  }, { "name" : "Yang Ja-Hyun" , "number" : "054-9152-2803"  }, { "name" : "P'ung Da-Hee" , "number" : "010-3425-5002"  }, { "name" : "Kye Eun-Ah" , "number" : "070-5128-4608"  }, { "name" : "Kun Sujin" , "number" : "02-4429-7810"  }, { "name" : "Pae Ae" , "number" : "070-8311-5537"  }, { "name" : "Ra Hwi-Hyang" , "number" : "1588-0132"  }, { "name" : "Sip Eun-Bi" , "number" : "1588-9463"  }, { "name" : "Ogum Yong-Gi" , "number" : "046-0213-2011"  }, { "name" : "Chang Seong-Hyeon" , "number" : "032-9671-4492"  }, { "name" : "Om Young-Soo" , "number" : "036-3070-9286"  }, { "name" : "Hwang Seung-Woo" , "number" : "036-4224-7732"  }, { "name" : "Tae Song-Ho" , "number" : "066-0719-8085"  }, { "name" : "P'yong Sang-Chul" , "number" : "02-0421-3789"  }, { "name" : "Ko Myung-Hee" , "number" : "053-3212-4003"  }, { "name" : "Chegal Jung-Nam" , "number" : "1588-9258"  }, { "name" : "Nae Kwang-Jo" , "number" : "061-9388-5237"  }, { "name" : "Kwok Sunghyon" , "number" : "031-3499-3751"  } ] })
+db.contact_address.find()
+db.contact_address.find()
+db
+use mydb
+db.contact_address.find()
+use mydb
+show collection
+show collections
+db.contact_address.find()
+use mydb
+db.createCollection(gallery)
+db.createCollection("gallery")
+show collections
+db.gallery.insert({"user" : "test", "image" : []})
+db.gallery.find()
+use mydb
+show collections
+db.contact_address.find()
+db.gallery.find()
+db.contact_address.deleteOne({_id : ObjectId("5c3441944220792ee56ac1f8")})
+db.contact_address.deleteOne({_id : ObjectId("5c34433ea1721f2f53c71229")})
+db.gallery.find()
+db.contact_address.find()
+db.gallery.deleteOne({_id : ObjectId("5c3441944220792ee56ac1f8")})
+db.gallery.deleteOne({_id : ObjectId("5c34433ea1721f2f53c71229")})
+db.gallery.find()
+db.gallery.deleteOne({"_id" : ObjectId("5c3441944220792ee56ac1f8")})
+db.gallery.find()
+db.gallery.imgae.find()
+db.gallery.image.find()
+db.gallery.deleteOne("image" : {"_id" : ObjectId("5c3441944220792ee56ac1f8")})
+use mydb
+db.gallery.find()
+use mydb
+db.gallery.find()
+use mydb
+db.gallery.drop()
+show collections
+db.createCollection("gallery")
+db.gallery.insert({"user" : "test", "image" : []})
+db.gallery.find()
+db
+use mydb
+db.gallery.find()
+use mydb
+show collections
+db.contact_address.find()
+db.contact_address.insert({"user" : "test2", "contact" : []})
+db.contact_address.find()
+use mydb
+db.contact_address.find()
+db.contact_address.deleteOne({_id : ObjectId("5c3489ac148f7967e34e3356")})
+db.contact_address.deleteOne({_id : ObjectId("5c348ec2f132a754918d3a64")})
+db.contact_address.deleteOne({_id : ObjectId("5c348f63b9d91954de330373")})
+db.contact_address.deleteOne({_id : ObjectId("5c349146ecf55d55c700fc1e")})
+db.contact_address.deleteOne({_id : ObjectId("5c34914eecf55d55c700fc1f")})
+db.contact_address.deleteOne({_id : ObjectId("5c349194c2c99c5600d72f60")})
+db.contact_address.deleteOne({_id : ObjectId("5c3491edee52635638eaf2d4")})
+db.contact_address.deleteOne({_id : ObjectId("5c3492dba33d0b56a7ecd929")})
+db.contact_address.deleteOne({_id : ObjectId("5c34930f97061b56c8c02bf0")})
+db.contact_address.find()
+use mydb
+db.gallery.find()
+db.contact_address.find()
+show collections
+db.todolist.find()
+db.gallery.drop()
+use mydb
+db.gallery.drop()
+db.createCollection("gallery")
+db.gallery.insert({"user" : "test", "image" : []})
+db.gallery.find()
+use mydb
+db.gallery.find()
+use mydb
+db.todolist.find()
+db.todolist.drop()
+db.createCollection("todolist")
+db.todolist.insert({"user" : "test", "todo" : []})
+db.todolist.find()
+use mydb
+db.gallery.find()
+db.gallery.drop()
+db.createCollection("gallery")
+db.gallery.insert({"user" : "test", "image" : []})
+db.gallery.find()
+use mydb
+db.gallery.find()
+use mydb
+db.contact_address.find()
+db.gallery.drop()
+db.createCollection("gallery")
+db.gallery.insert({"user" : "test", "image" : []})
+use mydb
+db.gallery.drop()
+db.createCollection("gallery")
+db.gallery.insert({"user" : "test", "image" : []})
+db
+show dbs
+use p3
+show dbs
+use p3
+show collections
+db.createCollection("Scheduler")
+show collections
+db.Scheduler.drop
+db.Scheduler.drop()
+db.createCollection("scheduler")
+show collections
+db.scheduler.find()
+db
+show dbs
+db
+use p3
+show collections
+db.schedule.find()
+db.schedule.deleteOne({_id : ObjectId("5c3877011e159d24e7d9a8bd")})
+db.schedule.find()
+use p3
+db.schedule.find()
+use p3
+db.schedule.find()
+use p3
+db.schedule.find()
+use p3
+db.schedule.find()
+db.schedule.deleteOne({_id : ObjectId("5c387834ebc16d257b37591f")})
+db.schedule.find()
+use p3
+show collections\
+show collections
+db.schedule.find()
+db.schedule.deleteOne({_id : ObjectId("5c38861ac7dc382ca219c955")})
+db.schedule.find()
+use p3
+db.schedule.find()
+show collections
+db.schedule.find()
+use p3
+db.schedule.find()
+use p3
+show collections
+db.schedule.find()
+db.schedule.drop()
+db.createCollection('schedule')
+show collections
+use p3
+show collections
+db.schedule.find()
+db.schedule.insert({"user" : "test4", "info_1" : [ {"yyyymm" : "201901", "info_2" : [{"01" : "Test1"}, {"02" : "Test2"}] } ]})
+db.schedule.find()
+use p3
+db.schedule.find()
+db.schedule.drop()
+db.createCollection('schedule')
+show collections
+use p3
+show collections
+db.schedule.find()
+use p3
+db.schedule.find()
+use p3
+show collections
+db.schedule.find()\
+db.schedule.find()
