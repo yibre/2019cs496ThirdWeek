@@ -7,42 +7,157 @@
     </head>
     <body>
         <div class = "black">
+            <div id = "MyClockDisplay" class = "clock"></div>
+            <script type="text/javascript">
+                function showTime(){
+                    var date = new Date();
+                    var h = date.getHours(); // 0 - 23
+                    var m = date.getMinutes(); // 0 - 59
+                    var s = date.getSeconds(); // 0 - 59
+                    var session = "AM";
+        
+                    if(h == 0){
+                        h = 12;
+                    }
+        
+                    if(h > 12){
+                        h = h - 12;
+                        session = "PM";
+                    }
+        
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+        
+                    var time = h + ":" + m + ":" + s + " " + session;
+                    document.getElementById("MyClockDisplay").innerText = time;
+                    document.getElementById("MyClockDisplay").textContent = time;
+        
+                    setTimeout(showTime, 1000);
+        
+                }
+                showTime();
+            </script>
+            <div class = "month">JANUARY</div>
             <div class = "calendar">
                 <div class = "day">
-                    <ul>
-                        <li>SUN</li>
-                        <li>MON</li>
-                        <li>TUE</li>
-                        <li>WED</li>
-                        <li>THUR</li>
-                        <li>FRI</li>
-                        <li>SAT</li>
-                    </ul>
+                    <div class = "yoil">SUN</div><div class = "yoil">MON</div><div class = "yoil">TUE</div><div class = "yoil">WED</div><div class = "yoil">THU</div><div class = "yoil">FRI</div><div class = "yoil">SAT</div>
                 </div>
-                <div class="date">
-                    <div class="day">
-                        <input type="text" placeholder="your name">
-                        <i class=""></i>
-                    </div>
-                    
-                    <!--<ul>
-                        <li>30</li>
-                            <input type="text" placeholder="일정">
-                        <li>31</li>
-                            <input type="text" placeholder="일정">
-                        <li>1</li>
-                            <input type="text" placeholder="일정">
-                        <li>2</li>
-                            <input type="text" placeholder="일정">
-                        <li>3</li>
-                            <input type="text" placeholder="일정">
-                        <li>4</li>
-                            <input type="text" placeholder="일정">
-                        <li>5</li>
-                            <input type="text" placeholder="일정">
-                    </ul> -->
+                <div class = "date">
+                    <div class="haru">
+                        <label for = "1d">30</label>
+                        <input type="text" id="1d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="2d">31</label>
+                        <input type="text" id="2d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="3d">1</label>
+                        <input type="text" id="3d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="4d">2</label>
+                        <input type="text" id="4d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="5d">3</label>
+                        <input type="text" id="5d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="6d">4</label>
+                        <input type="text" id="6d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="7d">5</label>
+                        <input type="text" id="7d" placeholder="Your name">
+                        </div><div class="haru">
+                        <label for="8d">6</label>
+                        <input type="text" id="8d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="9d">7</label>
+                        <input type="text" id="9d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="10d">8</label>
+                        <input type="text" id="10d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="11d">9</label>
+                        <input type="text" id="11d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="12d">10</label>
+                        <input type="text" id="12d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="13d">11</label>
+                        <input type="text" id="13d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="14d">12</label>
+                        <input type="text" id="14d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="15d">13</label>
+                        <input type="text" id="15d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="16d">14</label>
+                        <input type="text" id="16d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="17d">15</label>
+                        <input type="text" id="17d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="18d">16</label>
+                        <input type="text" id="18d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="19d">17</label>
+                        <input type="text" id="19d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="20d">18</label>
+                        <input type="text" id="20d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="21d">19</label>
+                        <input type="text" id="21d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="22d">20</label>
+                        <input type="text" id="22d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="23d">21</label>
+                        <input type="text" id="23d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="24d">22</label>
+                        <input type="text" id="24d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="25d">23</label>
+                        <input type="text" id="25d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="26d">24</label>
+                        <input type="text" id="26d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="27d">25</label>
+                        <input type="text" id="27d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="28d">26</label>
+                        <input type="text" id="28d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="29d">27</label>
+                        <input type="text" id="29d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="30d">28</label>
+                        <input type="text" id="30d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="31d">29</label>
+                        <input type="text" id="31d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="32d">30</label>
+                        <input type="text" id="32d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="33d">31</label>
+                        <input type="text" id="33d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="34d">1</label>
+                        <input type="text" id="34d" placeholder="일정">
+                        </div><div class="haru">
+                        <label for="35d">2</label>
+                        <input type="text" id="35d" placeholder="일정">
+                    </div>          
                 </div>
             </div>
+            <a class = "save" href="#" role="button">
+                <span>save</span>
+            </a>
+            <a class = "back" href="#" role="button">
+                <span>calendar</span>
+            </a>
         </div>
     </body>
 </html>
