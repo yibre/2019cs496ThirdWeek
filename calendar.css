@@ -13,75 +13,59 @@ body {
     -o-background-size: cover;
     background-size: cover;}
 
-.block {
-    background-color:rgb(0,0,0);
-    background-size: 100% 100%;
-}
-
-.calendar {
+.black {
+    background-color:rgba(0,0,0,0.3);
     position: absolute;
-    margin-left: 15%;
-    margin-top: 10%;
-    width: 70%;
-    /*margin: 0;
+    margin: 0;
     padding: 0;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    overflow: hidden; */
-    }
-/*
-ul {
-    margin: 0;
-    padding: 0;
-    }
-*/
-      
-li {
-    float: left;
-    display: block;
-    width: 14.2857%; /* 100나누기7한 값 */
-    /*height: 16.66%;*/
+    overflow: hidden; 
+}
+/*현재 검은색 이미지 박스 적용 완료*/
+
+.calendar{
+    background-color: lightgrey;
+    position: absolute; /*모든 영역에서 부모와 무관해짐*/
+    margin-left: 15%;
+    margin-top: 15%;
+    width: 70%;
+}
+
+
+li{
+    float: left; /*이걸 안하니까 list 형식으로 안보여주던데*/
+    display: block; /*block 형식으로 보여줌*/
+    width: 14.2857%; /*칸을 7칸으로 맞추기 위해 이렇게 설정*/
     text-align: center;
-    list-style-type: none;
-    font-weight: 800;
-    margin: 0px 0px 50px 0px;
-    }
-
-.day {
-    color: #7cb6e6;
-    }
-
-.date {
-    color: #000000;
-    border-radius: 5px; /*border의 모서리를 둥그스름하게 만드는 것*/
-    background-color: #ffb2b2;
-    border:  solid #ffb2b2;
+    list-style-type: none; /*리스트 스타일인데 앞에 똥글뱅이 없다고 하려고 있는거*/
 }
 
-/*
-li {
-  float: left;
-  display: block;
-  width: 14.2857%;
-  text-align: center;
-  list-style-type: none;
+.day{
+    border: 5px solid black;
+    position: relative;
+    height: 50px;
+    margin-left: 0;
+    margin-top: 0;
+    color: lavender;
 }
 
-li:nth-child(n+1):nth-child(-n+7) {
-  font-weight: 900;
-  color: #e67e22;
+.date{
+    border: 10px solid tomato;
+    position: relative;
+    margin-left: 0;
+    margin-top: 0;
 }
 
-li:nth-child(n+39), li:nth-child(n+8):nth-child(-n+16) {
-  font-weight: 900;
-  color: rgba(0,0,0,.3);
+input[type="text"]{
+    width: 14.2857%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
-
-li:hover:nth-child(n+8):nth-child(-n+38), li:nth-child(17){
-  border-radius: 5px;
-  background-color: #1abc9c;
-  color: #ecf0f1; 이게 그 색깔있던거
-}
-*/

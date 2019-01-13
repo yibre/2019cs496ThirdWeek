@@ -5,6 +5,19 @@ body {
     -o-background-size: cover;
     background-size: cover;}
 
+.black {
+    background-color:rgba(0,0,0,0.3);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden; 
+}
+/* body tag랑 black class는 배경화면에 들어가는 거니까 신경쓰지 말 것*/
+
 .clock {
     position: absolute;
     top: 10%;
