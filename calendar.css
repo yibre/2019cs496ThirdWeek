@@ -1,0 +1,71 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font: 18px Helvetica;
+    }
+
+body {
+    background: url(https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+.black {
+    background-color:rgba(0,0,0,0.3);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden; 
+}
+/*현재 검은색 이미지 박스 적용 완료*/
+
+.calendar{
+    background-color: lightgrey;
+    position: absolute; /*모든 영역에서 부모와 무관해짐*/
+    margin-left: 15%;
+    margin-top: 15%;
+    width: 70%;
+}
+
+
+li{
+    float: left; /*이걸 안하니까 list 형식으로 안보여주던데*/
+    display: block; /*block 형식으로 보여줌*/
+    width: 14.2857%; /*칸을 7칸으로 맞추기 위해 이렇게 설정*/
+    text-align: center;
+    list-style-type: none; /*리스트 스타일인데 앞에 똥글뱅이 없다고 하려고 있는거*/
+}
+
+.day{
+    border: 5px solid black;
+    position: relative;
+    height: 50px;
+    margin-left: 0;
+    margin-top: 0;
+    color: lavender;
+}
+
+.date{
+    border: 10px solid tomato;
+    position: relative;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+input[type="text"]{
+    width: 14.2857%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}

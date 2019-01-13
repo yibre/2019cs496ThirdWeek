@@ -1,0 +1,30 @@
+body {
+    background: url(https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+.black {
+    background-color:rgba(0,0,0,0.3);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden; 
+}
+/* body tag랑 black class는 배경화면에 들어가는 거니까 신경쓰지 말 것*/
+
+.clock {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #FFFFFF;
+    font-size: 80px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}
