@@ -2,8 +2,7 @@
  * http_module.js - Module which includes functions for HTTP requests.
  *                  
  */
-
-
+import {getContent, postContent} from './calendar_module.js';
 /*
  * getSchedule - GET schedule info from node.js server.
  *               Requires 3 parameters.
@@ -12,7 +11,7 @@
  *                 callbackFunc (Function) - Call back function.
  *                                           Response data will be passed into this function.
  */
-function getSchedule(username, year_month, callbackFunc){
+export function getSchedule(username, year_month){
     // Make url for HTTP GET request.
     var url = 'http://143.248.140.106:3780/getschedule?';
     var user = 'user='.concat(username).concat('&');
@@ -24,7 +23,7 @@ function getSchedule(username, year_month, callbackFunc){
                 console.log(error);
             }else{
                 // Pass data from server into call back function.
-                callbackFunc(data);
+                getContent(data);
             }
     });
 };
@@ -47,20 +46,20 @@ function getSchedule(username, year_month, callbackFunc){
  *              ...                                                                          *
  *           ]                                                                               *
  * }                                                                                         *
-*********************************************************************************************/
-function postSchedule(username, year_month, data, callbackFunc){
+ ********************************************************************************************/
+export function postSchedule(username, year_month, data){
     // Make url for HTTP POST request.
     var url = 'http://143.248.140.106:3780/postschedule?';
     var user = 'user='.concat(username).concat('&');
     var yearmonth = 'year_month='.concat(year_month);
     var full_url = url.concat(user).concat(yearmonth);
     // Send POST request to node.js server with data which is supposed to be posted.
-    $.post(full_url, data, function(error, change){
+    $.post(full_url, data, function(error){
             if (error){
                 console.log(error);
             }else{
-                // Pass change from server into call back function.
-                callbackFunc(change);
+                // Call getSchedule to refresh schedule datas.
+                getSchedule(username, year_month);
             }
     });
 }
