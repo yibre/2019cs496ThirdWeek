@@ -151,11 +151,29 @@
                         <input type="text" id="ad" placeholder="일정">
                     </div>          
                 </div>
+                <script type = "text/javascript"> // 캘린더 text box 긁어오기
+                    function save(){
+                        var json = {};
+                        json.info = [];
+
+    
+                        for (i = 1; i < 32; i++){
+                            var id = i.toString();
+                            var docu = {};
+                            docu['date'] = id;
+        
+                            docu['content'] = document.getElementById(id).value;
+                            json.info.push(docu);
+                        }
+                        alert(JSON.stringify(json));
+                    }
+                </script>
             </div>
-            <a class = "save" href="#" role="button">
+            <button class = "save" onclick='save()'>save</button>
+            <!--<a class = "save" href="#" role="button">
                 <span>save</span>
-            </a>
-            <a class = "back" href="#" role="button">
+            </a>-->
+            <a class = "back" href="digitalClock.html" role="button">
                 <span>back</span>
             </a>
         </div>
