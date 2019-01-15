@@ -5,8 +5,12 @@
       <title>Digital Clock</title>
       <link rel="stylesheet" type="text/css" href="style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body onload="javascript:getToday()">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Hi+Melody&amp;subset=korean" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+    </head>
+  <body onload="javascript:getload()">
     <div class = "black">
         <div id="MyClockDisplay" class="clock"></div>
         <script type="text/javascript">
@@ -39,11 +43,12 @@
             }
             showTime();
         </script>
+
     </div>
     <div class = "searchbar">
         <form action="https://www.google.com/search" method ="GET">
             <input type = "text" name = "q" placeholder = "Google search">
-            <input type = "submit" value = "google">
+            <input type = "submit" value="Go" id="go">
         </form>
     </div>
     <div class =  "schedule">
@@ -53,22 +58,31 @@
     
     
     <script type = "text/javascript"> // 스케쥴에 오늘의 일을 불러오는 자바스크립트
-        function getToday(data){
-            var info = data.info;
-            var today = new Date();
-            var date = today.getDate();
-            var todaycontent  = info[date-1].content;            
-            document.getElementById("schedule").value = todaycontent;
+
+        function store(){
+            var inputschedule = document.getElementById("schedule").value;
+            localStorage.setItem("schedule", inputschedule); //키와 벨류로 저장함
+            var inputtodo = document.getElementById("todo").value;
+            localStorage.setItem("todo", inputtodo);
+            alert("당신의 하루가 행복으로 가득 차면 좋겠어요.");
         }
+
+        function getload(){
+            var scheduleItem = localStorage.getItem("schedule");
+            var todoItem = localStorage.getItem("todo");
+            document.getElementById("schedule").value = scheduleItem;
+            document.getElementById("todo").value = todoItem;             
+        }
+
     </script>
 
 
     <div class =  "todo">
-        <label for = "todo">To Do List<button class="savebtn"><i class="fa fa-folder" style="font-size:1.5rem;"></i></button></label>
+        <label for = "todo">To Do List<button class="savebtn" onclick="store()"><i class="fa fa-folder" style="font-size:1.5rem;"></i></button></label>
         <textarea id ="todo" placeholder="오늘의 할일" cols=100 row=10></textarea>
     </div>
     <div class = "buttons">
-      <a class = "google" href="https://www.google.co.kr/?hl=ko" role="button"><img src = https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png></a>
+      <a class = "google" href="https://www.google.co.kr/?hl=ko" role="button"><img src = "https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"></a>
       <a class = "facebook" href="https://www.facebook.com/" role="button"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"></a>
       <a class = "naver" href="https://www.naver.com/" role="button"><img src ="https://static-s.aa-cdn.net/img/ios/393499958/39f23902ff033dbdc66fc2975ee97b33"></a> 
       <a class = "twitter" href="https://twitter.com/?lang=ko" role="button"><img src ="https://upload.wikimedia.org/wikipedia/tr/f/f2/Twitter-bird-light-bgs.png"></a>

@@ -19,8 +19,8 @@ body {
 /* body tag랑 black class는 배경화면에 들어가는 거니까 신경쓰지 말 것*/
 
 .searchbar {
-    margin-top: 11rem;
-    margin-left: 10rem;
+    margin-top: 13rem;
+    margin-left: 9.5rem;
 }
 
 form {
@@ -28,25 +28,26 @@ form {
 }
 
 .searchbar input[type="text"]{
-    width: 40rem;
+    width: 45rem;
     height: 2rem;
     position: relative;
     box-sizing: border-box;
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.6);
     text-align: center;
     border-radius: 5px;
+    border: none;
 }
 
 .searchbar input[type="submit"]{
-    width: 5rem;
+    width: 2rem;
     height: 2rem;
     position: relative;
     box-sizing: border-box;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
     border: none;
+    background-color: rgba(75, 80, 76, 0.8);
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .clock {
@@ -54,15 +55,15 @@ form {
     margin-top: 4rem;
     margin-left: 10rem;
     color: #FFFFFF;
-    font-size: 80px;
-    font-family: Orbitron;
+    font-size: 6rem;
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 7px;
 }
 
 /*-----------to do 와 스케쥴 표 관리하기-----------*/
 .schedule{
     position: absolute;
-    margin-top: -5rem;
+    margin-top: -7rem;
     margin-left: 80rem;
     width: 27rem;
     height: 32rem;
@@ -73,7 +74,7 @@ form {
     position: absolute;
     width: 27rem;
     height: 20rem;
-    margin-top: 27rem;
+    margin-top: 24rem;
     margin-left: 80rem;
   }
 
@@ -97,6 +98,8 @@ textarea {
     padding-bottom: 50;
     padding-top: 50;
     word-break: break-all;
+    font-family: 'Hi Melody', cursive;
+    font-size: 2rem;
 }
 /*
 input[type="text"]{
@@ -127,6 +130,7 @@ label{
     background: rgba(33, 49, 62, 0.87); /*현재는 주황색임*/
     margin-bottom: 0;
     font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .savebtn{ /*TODOLIST에 들어가는 저장버튼임*/
@@ -142,7 +146,7 @@ label{
     position: absolute;
     box-sizing: border-box;
     height: 100px;
-    margin-top: 40rem;
+    margin-top: 35rem;
     margin-left: 10rem;
   }
   

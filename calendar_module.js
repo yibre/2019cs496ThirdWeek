@@ -32,7 +32,7 @@ export function getContent(data){
 export function postContent(username, year_month){
     var json = {};
     json.info = [];
-    
+    alert(JSON.stringify(json));
     for (i = 1; i < 32; i++){
         var id = i.toString();
         var docu = {};
@@ -40,6 +40,7 @@ export function postContent(username, year_month){
         docu['content'] = document.getElementById(id).value;
         json.info.push(docu);
     }
+    
     // Call postSchedule as a call back function.
     postSchedule(username, year_month, json);
 }
