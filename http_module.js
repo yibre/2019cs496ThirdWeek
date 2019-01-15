@@ -1,8 +1,8 @@
 /*
  * http_module.js - Module which includes functions for HTTP requests.
- *                  
+ *                  Connected with functions in the calendar_module.js.
  */
-import {getContent, postContent} from './calendar_module.js';
+import {getContent} from './calendar_module.js';
 /*
  * getSchedule - GET schedule info from node.js server.
  *               Requires 3 parameters.
