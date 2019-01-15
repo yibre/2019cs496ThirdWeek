@@ -43,16 +43,19 @@ app.get('/getschedule', function(req, res){
 	var parsedUrl = url.parse(req.url);
 	var parsedQuery = querystring.parse(parsedUrl.query, '&', '=');
 	
-	// Need only one argument which is user identifier.
+	// Need two arguments which are user identifier and year/month identifier.
 	if (Object.keys(parsedQuery).length != 2){
 		res.write('Error: Too many or less arguments');
 		res.end();
 	}else{
 		var user_id = parsedQuery.user;
 		var year_month = parsedQuery.year_month;
-		var Schedule = mongoose.model('Schema', new Schema({user : String, year_month : String, info : [{date : String, content : String}]}), 'schedule');
 		
-		Schedule.find({'user' : user_id, 'year_month' : year_month}, {'_id' : 0, 'info' : 1}, function(error, data){
+		var Schedule = mongoose.model('Schema', new Schema({user : String, year_month : String, info : [{date : String, content : String}]}), 'schedule');
+		var condition = {'user' : user_id, 'year_month' : year_month};
+		var get = {'_id' : 0, 'info' : 1};
+		
+		Schedule.find(condition, get, function(error, data){
 			console.log('Get schedule info of user.');
 			if (error){
 				console.log(error);
@@ -65,7 +68,7 @@ app.get('/getschedule', function(req, res){
 						}else{
 							console.log('Create entity for user.');
 							// Set the response again.
-							Schedule.find({'user' : user_id, 'year_month' : year_month}, {'_id' : 0, 'info' : 1}, function(error, newdata){
+							Schedule.find(condition, get, function(error, newdata){
 								if (error){
 									console.log(error);
 								}else{
@@ -98,26 +101,113 @@ app.post('/postschedule', function(req, res){
 	var parsedUrl = url.parse(req.url);
 	var parsedQuery = querystring.parse(parsedUrl.query, '&', '=');
 	
-	// Need only one argument which is user identifier.
-	if (Object.keys(parsedQuery).length != 1){
-		res.write('Error: Too many or no argument.');
+	// Need two arguments which are user identifier and year/month identifier.
+	if (Object.keys(parsedQuery).length != 2){
+		res.write('Error: Too many or less arguments.');
 		rew.end();
 	}else{
 		var user_id = parsedQuery.user;
-		var year_month = req.body.year_month;
+		var year_month = parsedQuery.year_month;
 		var new_info = req.body.info;
-		//new_info = new_info.trim();
-		//var new_info = new_info_str.replace("'", "");
-		//new_info.replace("/", "");
-		//new_info.replace(, "");
-		//console.log(new_info);
-		
 		
 		var Schedule = mongoose.model('Schema', new Schema({user : String, year_month : String, info : [{date : String, content : String}]}), 'schedule');
-		
+		var condition = {'user' : user_id, 'year_month' : year_month};
 		var update = {'$set' : {'info' : new_info}};
 		var option = {upsert : true, new : true, useFindAndModify : false};
-		Schedule.findOneAndUpdate({'user' : user_id, 'year_month' : year_month}, update, option, function(error, change){
+		
+		Schedule.findOneAndUpdate(condition, update, option, function(error, change){
+			if (error){
+				console.log(error);
+			}else{
+				res.setHeader('Content-Type', 'text/json');
+				res.write(change.toString());
+				res.end();
+			}
+		});
+		mongoose.deleteModel('Schema');
+	}
+});
+
+/*
+ * GET - Deals with GET method,
+ *       which requests user's todo list contents.
+ */
+app.get('/gettodo', function(req, res){
+	console.log('Get todo list info of user.');
+	// Parse arguments.
+	var parsedUrl = url.parse(req.url);
+	var parsedQuery = querystring.parse(parsedUrl.query, '&', '=');
+	
+	// Need only one argument which is user identifier.
+	if (Object.keys(parsedQuery).length != 1){
+		res.write('Error: Too many or less arguments.');
+		res.end();
+	}else{
+		var user_id = parsedQuery.user;
+		
+		var Todo = mongoose.model('Schema', new Schema({user : String, content : String}), 'todo');
+		var condition = {'user' : user_id};
+		var get = {'_id' : 0, 'content' : 1};
+		
+		Todo.find(condition, get, function(error, data){
+			if (error){
+				console.log(error);
+			}else{
+				// If there's no entity for this user, make it.
+				if (data.toString() == ''){
+					Todo.create({'user' : user_id, 'content' : ''}, function(error){
+						if (error){
+							console.log(error);
+						}else{
+							console.log('Create entity for user.');
+							// Set the response again.
+							Todo.find(condition, get, function(error, newdata){
+								if (error){
+									console.log(error);
+								}else{
+									data = newdata;
+									res.setHeader('Content-Type', 'text/json');
+									res.write(data.toString());
+									res.end();
+								}
+							});
+						}
+					});
+				}else{
+					res.setHeader('Content-Type', 'text/json');
+					res.write(data.toString());
+					res.end();
+				}
+			}
+		});
+		mongoose.deleteModel('Schema');
+	}
+});
+
+/*
+ * POST - Deals with POST method,
+ *        which modifies user's todo list contents.
+ */
+app.post('/posttodo', function(req, res){
+	console.log('Post todo list info of user.');
+	// Parse arguments.
+	var parsedUrl = url.parse(req.url);
+	var parsedQuery = querystring.parse(parsedUrl.query, '&', '=');
+	
+	// Need only one argument which is user identifier.
+	if (Object.keys(parsedQuery).length != 1){
+		res.write('Error: Too many or less argument.');
+		res.end();
+	}else{
+		var user_id = parsedQuery.user;
+		var new_content = req.body.content;
+		
+		var Todo = mongoose.model('Schema', new Schema({user : String, content : String}), 'todo');
+		var condition = {'user' : user_id};
+		var update = {'$set' : {'content' : new_content}};
+		var option = {upsert : true, new : true, useFindAndModify : false};
+		
+		Todo.findOneAndUpdate(condition, update, option, function(error, change){
 			if (error){
 				console.log(error);
 			}else{
