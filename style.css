@@ -18,13 +18,111 @@ body {
 }
 /* body tag랑 black class는 배경화면에 들어가는 거니까 신경쓰지 말 것*/
 
+.searchbar {
+    margin-top: 11rem;
+    margin-left: 10rem;
+}
+
+form {
+    height: 100%;
+}
+
+.searchbar input[type="text"]{
+    width: 40rem;
+    height: 2rem;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.searchbar input[type="submit"]{
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
 .clock {
     position: absolute;
-    top: 10%;
-    left: 20%;
-    transform: translateX(-50%) translateY(-50%);
+    margin-top: 4rem;
+    margin-left: 10rem;
     color: #FFFFFF;
     font-size: 80px;
     font-family: Orbitron;
     letter-spacing: 7px;
+}
+
+.schedule{
+    position: absolute;
+    margin-top: -5rem;
+    margin-left: 80rem;
+    width: 27rem;
+    height: 32rem;
+
+  }
+  
+.todo{
+    position: absolute;
+    width: 27rem;
+    height: 20rem;
+    margin-top: 27rem;
+    margin-left: 80rem;
+  }
+  
+input[type="text"]{
+    position: relative;
+    display: inline-block;
+    margin-top: 0px;
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 3px 0px 0px 3px;
+    background-color: rgba(255,255,255,0.8)
+  }
+  
+label{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    color: white; /*글자 색깔*/
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 20px; /*글자 여백임*/
+    background: #ddbea1; /*현재는 주황색임*/
+    margin-bottom: 5px;
+}
+  
+.buttons{
+    position: absolute;
+    box-sizing: border-box;
+    height: 100px;
+    margin-top: 40rem;
+    margin-left: 10rem;
+  }
+  
+.google, .twitter, .facebook, .naver, .goCalendar {
+    background-color: rgba(221, 190, 161, 0.7);
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 9px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+.facebook img, .naver img, .goCalendar img, .google img, .twitter img{
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
 }

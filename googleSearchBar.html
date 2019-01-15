@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Goolge search</title>
+        <style>
+            .searchbar {
+                margin-top: 7rem;
+                margin-left: 5rem;
+                width: 25rem;
+                height: 2rem;
+            }
+
+            form {
+                height: 100%;
+            }
+
+            .searchbar input[type="text"]{
+                width: 17rem;
+                height: 100%;
+                position: relative;
+                box-sizing: border-box;
+                border: 3px solid red;
+                text-align: center;
+                border-radius: 3px 0px 0px 3px;
+            }
+
+            .searchbar input[type="submit"]{
+                width: 5rem;
+                height: 100%;
+                position: relative;
+                box-sizing: border-box;
+                border: 5px solid sandybrown;
+                background-color: black;
+                color: white;
+                text-align: center;
+                border-radius: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class = "searchbar">
+            <form action="https://www.google.com/search" method ="GET">
+                <input type = "text" name = "q" placeholder = "Google search">
+                <input type = "submit" value = "google">
+            </form>
+        </div>
+    </body>
+</html>
