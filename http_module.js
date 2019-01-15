@@ -1,15 +1,13 @@
 /*
  * http_module.js - Module which includes functions for HTTP requests.
- *                  
+ *                  Connected with functions in the calendar_module.js.
  */
-import {getContent, postContent} from './calendar_module.js';
+import {getContent} from './calendar_module.js';
 /*
  * getSchedule - GET schedule info from node.js server.
- *               Requires 3 parameters.
+ *               Requires 2 parameters.
  *               : username (String) - User identifier.
  *                 year_month (String) - Year/Month identifier.
- *                 callbackFunc (Function) - Call back function.
- *                                           Response data will be passed into this function.
  */
 export function getSchedule(username, year_month){
     // Make url for HTTP GET request.
@@ -30,12 +28,10 @@ export function getSchedule(username, year_month){
 
 /*
  * postSchedule - POST schedule info from node.js server.
- *                Requires 4 parameters.
+ *                Requires 3 parameters.
  *                : username (String) - User identifier.
  *                  year_month (String) - Year/Month identifier.
  *                  data (Json) - Data which is supposed to be posted to server.
- *                  callbackFunc (Function) - Call back function.
- *                                            Response data will be passed into this function.
  */
 /*********************************************************************************************
  * Format of 'data':                                                                         *
