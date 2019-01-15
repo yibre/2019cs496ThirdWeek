@@ -4,8 +4,9 @@
       <meta charset="UTF-8">
       <title>Digital Clock</title>
       <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <body onload="javascript:getToday()">
     <div class = "black">
         <div id="MyClockDisplay" class="clock"></div>
         <script type="text/javascript">
@@ -46,19 +47,32 @@
         </form>
     </div>
     <div class =  "schedule">
-      <label for = "schedule">라벨라벨</label>
-      <input type = "text" id ="shedule" placeholder="오늘의 스케쥴이지롱">
+      <label for = "schedule">Today's Schedule</label>
+      <textarea id ="schedule" placeholder="스케쥴"></textarea>
     </div>
+    
+    
+    <script type = "text/javascript"> // 스케쥴에 오늘의 일을 불러오는 자바스크립트
+        function getToday(data){
+            var info = data.info;
+            var today = new Date();
+            var date = today.getDate();
+            var todaycontent  = info[date-1].content;            
+            document.getElementById("schedule").value = todaycontent;
+        }
+    </script>
+
+
     <div class =  "todo">
-      <label for = "todo">김라벨</label>
-      <input type = "text" id ="todo" placeholder="이것이 바로 오늘 해야할 일이지롱">
+        <label for = "todo">To Do List<button class="savebtn"><i class="fa fa-folder" style="font-size:1.5rem;"></i></button></label>
+        <textarea id ="todo" placeholder="오늘의 할일" cols=100 row=10></textarea>
     </div>
     <div class = "buttons">
       <a class = "google" href="https://www.google.co.kr/?hl=ko" role="button"><img src = https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png></a>
       <a class = "facebook" href="https://www.facebook.com/" role="button"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"></a>
       <a class = "naver" href="https://www.naver.com/" role="button"><img src ="https://static-s.aa-cdn.net/img/ios/393499958/39f23902ff033dbdc66fc2975ee97b33"></a> 
       <a class = "twitter" href="https://twitter.com/?lang=ko" role="button"><img src ="https://upload.wikimedia.org/wikipedia/tr/f/f2/Twitter-bird-light-bgs.png"></a>
-      <a class = "goCalendar" href="calendar.html" role="button"><img src ="https://assets.echocommunity.org/images/85032db6-de87-47fc-abaf-d1fa3a5f498f/calendar-icon-marketing-image_lg.png"></a>
+      <a class = "goCalendar" href="calendar.html" role="button" ><img src ="https://assets.echocommunity.org/images/85032db6-de87-47fc-abaf-d1fa3a5f498f/calendar-icon-marketing-image_lg.png"></a>
     </div>
   </body>
 </html>

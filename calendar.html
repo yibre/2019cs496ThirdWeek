@@ -45,10 +45,10 @@
                 </div>
                 <div class = "date">
                     <div class="haru">
-                        <label for = "aa">30</label>
+                        <label for = "aa" id="previous">30</label>
                         <input type="text" id="aa" placeholder="Your name">
                         </div><div class="haru">
-                        <label for="ab">31</label>
+                        <label for="ab" id="previous2">31</label>
                         <input type="text" id="ab" placeholder="Your name">
                         </div><div class="haru">
                         <label for="1">1</label>
@@ -144,21 +144,33 @@
                         <label for="31">31</label>
                         <input type="text" id="31" placeholder="일정">
                         </div><div class="haru">
-                        <label for="ac">1</label>
+                        <label for="ac" id="next">1</label>
                         <input type="text" id="ac" placeholder="일정">
                         </div><div class="haru">
-                        <label for="ad">2</label>
+                        <label for="ad" id="next2">2</label>
                         <input type="text" id="ad" placeholder="일정">
                     </div>          
                 </div>
             </div>
-            <button class = "save" onclick=''>save</button>
+            <button class = "save" id="load" onclick='getContent()'><img src="https://cdn3.iconfinder.com/data/icons/web-icons-2/64/Cloud_Upload-512.png"></button>
             <!--<a class = "save" href="#" role="button">
                 <span>save</span>
             </a>-->
-            <a class = "back" href="digitalClock.html" role="button">
-                <span>back</span>
-            </a>
+
+            <script type = "text/javascript">
+                function getContent(data){
+                    var data = {'info' : [{'date' : '1', 'content' : 'asdf'}, {'date' : '2', 'content' : 'as'}, {'date' : '3', 'content' : 'df'}]};
+                // Implemented assuming that the 'data' is JSON object type.
+                    var info  = data.info;
+                    for (i = 1; i < 4; i++){
+                        var id = i.toString();
+                        var content = info[i-1].content;
+                        document.getElementById(id).value = content;
+                    }
+                }
+                document.getElementById("load").click(); // 버튼을 클릭해줌
+            </script>
+            <a class = "back" href="digitalClock.html" role="button"><img src="https://image.flaticon.com/icons/png/512/25/25694.png"></a>
         </div>
     </body>
 </html>
