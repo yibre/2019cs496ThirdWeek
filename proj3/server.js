@@ -128,6 +128,10 @@ app.post('/postschedule', function(req, res){
 	}
 });
 
+/*
+ * GET - Deals with GET method,
+ *       which requests user's todo list contents.
+ */
 app.get('/gettodo', function(req, res){
 	console.log('Get todo list info of user.');
 	// Parse arguments.
@@ -180,6 +184,10 @@ app.get('/gettodo', function(req, res){
 	}
 });
 
+/*
+ * POST - Deals with POST method,
+ *        which modifies user's todo list contents.
+ */
 app.post('/posttodo', function(req, res){
 	console.log('Post todo list info of user.');
 	// Parse arguments.
