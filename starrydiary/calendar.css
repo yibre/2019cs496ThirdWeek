@@ -1,0 +1,158 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font: 18px Helvetica;
+    }
+
+body {
+    background: url(https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+    /*우리가 쓰던거:https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525_960_720.jpg
+    그외에 사진: https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg    */
+
+.black {
+    background-color:rgba(0,0,0,0.3);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden; 
+}
+/*현재 검은색 이미지 박스 적용 완료*/
+
+.clock {
+    position: absolute;
+    margin-top: 4rem;
+    margin-left: 10rem;
+    color: #FFFFFF;
+    font-size: 5.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 7px;
+}
+
+.month {
+    position: absolute;
+    margin-top: 8rem;
+    margin-left: 46rem;
+    font-size: 3.5rem;
+    color: #FFFFFF;
+    font-family: 'Fredoka One', cursive;   
+}
+
+.calendar {
+    position: absolute; 
+    /*모든 영역에서 부모와 무관해짐*/
+    margin-left: 12rem;
+    margin-top: 13rem;
+    width: 85rem;
+}
+
+
+.yoil{
+  display: inline-block;
+  width: 14%;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  background-color: rgba(33, 49, 62, 0.9);
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 1rem;
+  margin-left: 0.1rem;
+  color: white;
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.haru{
+  width: 14%;
+  height: 30%;
+  display: inline-block;
+  margin-bottom: 0.1rem;
+  margin-left: 0.1rem;
+}
+
+input[type="text"]{
+  position: relative;
+  display: inline-block;
+  margin-top: 0px;
+  width: 100%;
+  height: 4rem;
+  box-sizing: border-box;
+  background-color: rgba(250, 250, 250, 0.8);
+  border: 3px rgba(250, 250, 250, 0.8);
+  text-align: center;
+  border-radius: 3px 3px 3px 3px;
+}
+
+/*
+input[type="text"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 30px dodgerBlue;
+}*/
+
+label{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+    color: white; /*글자 색깔*/
+    border-radius: 10px 10px 0px 0px;
+    padding: 3px; /*글자 여백임*/
+    background: rgba(218, 144, 105, 0.8)/*rgba(84, 123, 156, 0.8);*/
+}
+
+#previous, #previous2, #next, #next2{
+    background: rgba(150, 150, 150, 0.8);
+}
+
+
+ /*여기서부터는 버튼 옵션*/
+.save {
+    font-size: 1rem;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(75, 80, 76, 0.7);
+    width: 3rem;
+    height:  3rem;
+    border: none;
+    margin-top: 46rem;
+    margin-left: 90rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3);
+}
+.back {
+    font-size: 1rem;
+    text-align: center;
+    position: absolute;
+    border:none;
+    background-color: rgba(75, 80, 76, 0.7);
+    width: 3rem;
+    height:  3rem;
+    margin-top: 46rem;
+    margin-left: 94rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.3);
+}
+
+.save img{
+    width: 100%;
+    height: 100%;
+}
+
+.back img{
+    margin-top:5%;
+    width: 85%;
+    height: 85%;
+}

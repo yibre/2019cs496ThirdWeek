@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Digital Clock</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Hi+Melody&amp;subset=korean" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+    </head>
+  <body onload="javascript:getload()">
+    <div class = "starrynight">
+    <div class = "black">
+        <div id="MyClockDisplay" class="clock"></div>
+        <script type="text/javascript">
+            function showTime(){
+                var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+    
+                if(h == 0){
+                    h = 12;
+                }
+    
+                if(h > 12){
+                    h = h - 12;
+                    session = "PM";
+                }
+    
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+    
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+    
+                setTimeout(showTime, 1000);
+    
+            }
+            showTime();
+        </script>
+
+    </div>
+    <div class = "searchbar">
+        <form action="https://www.google.com/search" method ="GET">
+            <input type = "text" name = "q" placeholder = "Google search">
+            <input type = "submit" value="Go" id="go">
+        </form>
+    </div>
+    <div class =  "schedule">
+      <label for = "schedule">Today's Schedule</label>
+      <textarea id ="schedule" placeholder="스케쥴"></textarea>
+    </div>
+    
+    
+    <script type = "text/javascript"> // 스케쥴에 오늘의 일을 불러오는 자바스크립트
+
+        function store(){
+            var inputschedule = document.getElementById("schedule").value;
+            localStorage.setItem("schedule", inputschedule); //키와 벨류로 저장함
+            var inputtodo = document.getElementById("todo").value;
+            localStorage.setItem("todo", inputtodo);
+            alert("당신의 하루가 행복으로 가득 차면 좋겠어요.");
+            changePage();
+        }
+
+        function getload(){
+            var scheduleItem = localStorage.getItem("schedule");
+            var todoItem = localStorage.getItem("todo");
+            document.getElementById("schedule").value = scheduleItem;
+            document.getElementById("todo").value = todoItem;  
+        }
+
+        function changePage(){ //별똥별이라는 걸 바꿔줌
+            var str = localStorage.getItem("schedule")
+            if (str.match('별똥별')){
+               msg = "별똥별을 보러 가시겠습니까?";
+               if (confirm(msg)!=0){
+                    $("body").css("background-image", "url(https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg)");
+               }
+            }
+        }
+
+    </script>
+
+
+    <div class =  "todo">
+        <label for = "todo">To Do List<button class="savebtn" onclick="store()"><i class="fa fa-folder" style="font-size:1.5rem;"></i></button></label>
+        <textarea id ="todo" placeholder="오늘의 할일" cols=100 row=10></textarea>
+    </div>
+    <div class = "buttons">
+      <a class = "google" href="https://www.google.co.kr/?hl=ko" role="button"><img src = "https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"></a>
+      <a class = "facebook" href="https://www.facebook.com/" role="button"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"></a>
+      <a class = "naver" href="https://www.naver.com/" role="button"><img src ="https://static-s.aa-cdn.net/img/ios/393499958/39f23902ff033dbdc66fc2975ee97b33"></a> 
+      <a class = "twitter" href="https://twitter.com/?lang=ko" role="button"><img src ="https://upload.wikimedia.org/wikipedia/tr/f/f2/Twitter-bird-light-bgs.png"></a>
+      <a class = "goCalendar" href="calendar.html" role="button" ><img src ="https://assets.echocommunity.org/images/85032db6-de87-47fc-abaf-d1fa3a5f498f/calendar-icon-marketing-image_lg.png"></a>
+    </div>
+    </div>
+  </body>
+</html>

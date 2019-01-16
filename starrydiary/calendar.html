@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calendar</title>
+        <link rel="stylesheet" type="text/css" href="calendar.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    </head>
+    <body onload="javascript:getSchedule('test','201901')">
+        <script type="text/javascript">
+        // calendar_module.js파일 복사
+            function getContent(data){
+                data = data.replace("info:", "'info':");
+
+                for(i=0; i<31; i++){
+                    data = data.replace("_id:", "'_id':");
+                    data = data.replace("date:", "'date':");
+                    data = data.replace("content:", "'content':");
+                }
+
+                for(i=0; i<250; i++){
+                    data= data.replace("'", '"');
+                }
+                console.log(data);
+                data= JSON.parse(data);   
+
+                var info  = data.info;
+                for (i = 1; i < 32; i++){
+                    var id = i.toString();
+                    var content = info[i - 1].content;
+                    document.getElementById(id).value = content;
+                }
+            }
+
+            function postContent(username, year_month){
+                var json = {};
+                json.info = [];
+                
+                for (i = 1; i < 32; i++){
+                    var id = i.toString();
+                    var docu = {};
+                    docu['date'] = id;
+                    docu['content'] = document.getElementById(id).value;
+                    json.info.push(docu);
+                }
+                // Call postSchedule as a call back function.
+                postSchedule(username, year_month, json);
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script> // http_module.js 파일 
+            function getSchedule(username, year_month){
+            // Make url for HTTP GET request.
+                var url = 'http://143.248.140.106:3780/getschedule?';
+                var user = 'user='.concat(username).concat('&');
+                var yearmonth = 'year_month='.concat(year_month);
+                var full_url = url.concat(user).concat(yearmonth);
+                // Send GET request to node.js server.
+                
+                $.get(full_url, function(data){
+                    getContent(data);
+                });
+            }
+                            
+                
+                /*$.get(full_url, function(data, status){
+                    if (error){
+                        //console.log(error);
+                        alert(error);
+                    }else{
+                        // Pass data from server into call back function.
+                        getContent(data);
+                    }
+                })*/
+
+            function postSchedule(username, year_month, data){
+                // Make url for HTTP POST request.
+                var url = 'http://143.248.140.106:3780/postschedule?';
+                var user = 'user='.concat(username).concat('&');
+                var yearmonth = 'year_month='.concat(year_month);
+                var full_url = url.concat(user).concat(yearmonth);
+                // Send POST request to node.js server with data which is supposed to be posted.
+                $.post(full_url, data, function(error){
+                    if (error){
+                        //console.log(error);
+                        alert(error);
+                    }else{
+                // Call getSchedule to refresh schedule datas.
+                        getSchedule(username, year_month);
+                        alert('success');
+                    }
+                });
+            }
+        </script>
+
+        <div class = "black">
+            <div id = "MyClockDisplay" class = "clock"></div>
+            <script type="text/javascript">
+                function showTime(){
+                    var date = new Date();
+                    var h = date.getHours(); // 0 - 23
+                    var m = date.getMinutes(); // 0 - 59
+                    var s = date.getSeconds(); // 0 - 59
+                    var session = "AM";
+        
+                    if(h == 0){
+                        h = 12;
+                    }
+        
+                    if(h > 12){
+                        h = h - 12;
+                        session = "PM";
+                    }
+        
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+        
+                    var time = h + ":" + m + ":" + s + " " + session;
+                    document.getElementById("MyClockDisplay").innerText = time;
+                    document.getElementById("MyClockDisplay").textContent = time;
+        
+                    setTimeout(showTime, 1000);
+        
+                }
+                showTime();
+            </script>
+            <div class = "month">JANUARY</div>
+            <div class = "calendar">
+                <div class = "day">
+                    <div class = "yoil">SUN</div><div class = "yoil">MON</div><div class = "yoil">TUE</div><div class = "yoil">WED</div><div class = "yoil">THU</div><div class = "yoil">FRI</div><div class = "yoil">SAT</div>
+                </div>
+                <div class = "date">
+                    <div class="haru">
+                        <label for = "aa" id="previous">30</label>
+                        <input type="text" id="aa" placeholder="친구들과">
+                        </div><div class="haru">
+                        <label for="ab" id="previous2">31</label>
+                        <input type="text" id="ab" placeholder="와글바글">
+                        </div><div class="haru">
+                        <label for="1">1</label>
+                        <input type="text" id="1" placeholder="모여서">
+                        </div><div class="haru">
+                        <label for="2">2</label>
+                        <input type="text" id="2" placeholder="코딩을">
+                        </div><div class="haru">
+                        <label for="3">3</label>
+                        <input type="text" id="3" placeholder="하고">
+                        </div><div class="haru">
+                        <label for="4">4</label>
+                        <input type="text" id="4" placeholder="있어요">
+                        </div><div class="haru">
+                        <label for="5">5</label>
+                        <input type="text" id="5" placeholder="행복한">
+                        </div><div class="haru">
+                        <label for="6">6</label>
+                        <input type="text" id="6" placeholder="오늘">
+                        </div><div class="haru">
+                        <label for="7">7</label>
+                        <input type="text" id="7" placeholder="">
+                        </div><div class="haru">
+                        <label for="8">8</label>
+                        <input type="text" id="8" placeholder="">
+                        </div><div class="haru">
+                        <label for="9">9</label>
+                        <input type="text" id="9" placeholder="">
+                        </div><div class="haru">
+                        <label for="10">10</label>
+                        <input type="text" id="10" placeholder="">
+                        </div><div class="haru">
+                        <label for="11">11</label>
+                        <input type="text" id="11" placeholder="">
+                        </div><div class="haru">
+                        <label for="12">12</label>
+                        <input type="text" id="12" placeholder="하루">
+                        </div><div class="haru">
+                        <label for="13">13</label>
+                        <input type="text" id="13" placeholder="">
+                        </div><div class="haru">
+                        <label for="14">14</label>
+                        <input type="text" id="14" placeholder="">
+                        </div><div class="haru">
+                        <label for="15">15</label>
+                        <input type="text" id="15" placeholder="">
+                        </div><div class="haru">
+                        <label for="16">16</label>
+                        <input type="text" id="16" placeholder="">
+                        </div><div class="haru">
+                        <label for="17">17</label>
+                        <input type="text" id="17" placeholder="">
+                        </div><div class="haru">
+                        <label for="18">18</label>
+                        <input type="text" id="18" placeholder="">
+                        </div><div class="haru">
+                        <label for="19">19</label>
+                        <input type="text" id="19" placeholder="">
+                        </div><div class="haru">
+                        <label for="20">20</label>
+                        <input type="text" id="20" placeholder="">
+                        </div><div class="haru">
+                        <label for="21">21</label>
+                        <input type="text" id="21" placeholder="">
+                        </div><div class="haru">
+                        <label for="22">22</label>
+                        <input type="text" id="22" placeholder="">
+                        </div><div class="haru">
+                        <label for="23">23</label>
+                        <input type="text" id="23" placeholder="">
+                        </div><div class="haru">
+                        <label for="24">24</label>
+                        <input type="text" id="24" placeholder="">
+                        </div><div class="haru">
+                        <label for="25">25</label>
+                        <input type="text" id="25" placeholder="">
+                        </div><div class="haru">
+                        <label for="26">26</label>
+                        <input type="text" id="26" placeholder="">
+                        </div><div class="haru">
+                        <label for="27">27</label>
+                        <input type="text" id="27" placeholder="">
+                        </div><div class="haru">
+                        <label for="28">28</label>
+                        <input type="text" id="28" placeholder="">
+                        </div><div class="haru">
+                        <label for="29">29</label>
+                        <input type="text" id="29" placeholder="">
+                        </div><div class="haru">
+                        <label for="30">30</label>
+                        <input type="text" id="30" placeholder="">
+                        </div><div class="haru">
+                        <label for="31">31</label>
+                        <input type="text" id="31" placeholder="">
+                        </div><div class="haru">
+                        <label for="ac" id="next">1</label>
+                        <input type="text" id="ac" placeholder="">
+                        </div><div class="haru">
+                        <label for="ad" id="next2">2</label>
+                        <input type="text" id="ad" placeholder="">
+                    </div>          
+                </div>
+            </div>
+            <button class = "save" id="load" onclick="postContent('test','201901')"><img src="https://cdn3.iconfinder.com/data/icons/web-icons-2/64/Cloud_Upload-512.png"></button>
+            <!--<a class = "save" href="#" role="button">
+                <span>save</span>
+            </a>-->
+
+            <script type = "text/javascript">
+                // 버튼을 클릭해줌
+            </script>
+            <a class = "back" href="digitalClock.html" role="button"><img src="https://image.flaticon.com/icons/png/512/25/25694.png"></a>
+        </div>
+    </body>
+</html>
