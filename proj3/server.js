@@ -7,12 +7,24 @@ var http = require('http');
 var url = require('url');
 var querystring = require('querystring');
 
+var allowCors = function(req, res, next){
+	res.header('Acess-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+	(req.method === 'OPTIONS') ?
+		res.send(200) :
+		next();
+};
+
 // Use express.
 const express = require('express');
+var cors = require('cors');
 const app = express();
 var bodyParser = require('body-parser');
+app.use(allowCors);
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(cors());
 
 // Connect this nodejs server with mongoDB.
 var  mongoose = require('mongoose');
@@ -53,7 +65,7 @@ app.get('/getschedule', function(req, res){
 		
 		var Schedule = mongoose.model('Schema', new Schema({user : String, year_month : String, info : [{date : String, content : String}]}), 'schedule');
 		var condition = {'user' : user_id, 'year_month' : year_month};
-		var get = {'_id' : 0, 'info' : 1};
+		var get = {'_id' : 0, 'user' : 0, 'year_month' : 0, 'info._id' : 0, '__v' : 0};
 		
 		Schedule.find(condition, get, function(error, data){
 			console.log('Get schedule info of user.');
@@ -73,7 +85,7 @@ app.get('/getschedule', function(req, res){
 									console.log(error);
 								}else{
 									data = newdata;
-									res.setHeader('Content-Type', 'text/json');
+									res.setHeader('Content-Type', 'application/json');
 									res.write(data.toString());
 									res.end();
 								}
@@ -81,7 +93,9 @@ app.get('/getschedule', function(req, res){
 						}
 					});
 				}else{
-					res.setHeader('Content-Type', 'text/json');
+					//console.log(data.toString());
+					res.setHeader('Content-Type', 'application/x-www-form-urlencoded');
+					//res.setHeader('Content-Type', 'text/json');
 					res.write(data.toString());
 					res.end();
 				}
